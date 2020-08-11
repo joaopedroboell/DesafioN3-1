@@ -17,13 +17,13 @@ namespace DesafioN3_1
             Xmls = new List<XmlDocument>();
         }
 
-        public decimal retornaTotalXmls(string caminho)
+        public decimal RetornaTotalXmls(string caminho)
         {
-            carregaXmls(caminho);
-            return somaTotalXml();
+            CarregaXmls(caminho);
+            return SomaTotalXml();
         }
 
-        public decimal somaTotalXml()
+        public decimal SomaTotalXml()
         {
             var total = (decimal)0;
             Parallel.ForEach(Xmls, (x) =>
@@ -33,7 +33,7 @@ namespace DesafioN3_1
             return total;
         }
 
-        public void carregaXmls(string caminho)
+        public void CarregaXmls(string caminho)
         {   
             var xmlsNaPasta = new DirectoryInfo(caminho)
                 .GetFiles()
