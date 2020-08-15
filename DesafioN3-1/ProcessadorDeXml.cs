@@ -28,7 +28,14 @@ namespace DesafioN3_1
             var total = (decimal)0;
             Parallel.ForEach(Xmls, (x) =>
             {
-                total += decimal.Parse(x.GetElementsByTagName("vNF")[0].InnerXml);
+                string V = x.GetElementsByTagName("vNF")[0].InnerXml;
+                Console.WriteLine("Este é o valor que 'V' esta retornando para este XML " + V);
+                
+                string trocar = V.Replace('.', ',');
+                //Console.WriteLine("isto é o que o "trocar" esta retornando " + trocar);
+                              
+                total +=  Convert.ToDecimal(trocar);
+                //Console.WriteLine("isto é o que o total esta retornando " + total);
             });
             return total;
         }
