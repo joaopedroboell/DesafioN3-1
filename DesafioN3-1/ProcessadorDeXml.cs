@@ -26,11 +26,19 @@ namespace DesafioN3_1
         public decimal SomaTotalXml()
         {
             var total = (decimal)0;
-            Parallel.ForEach(Xmls, (x) =>
+            foreach (var xml in Xmls)
             {
-                total += decimal.Parse(x.GetElementsByTagName("vNF")[0].InnerXml);
-            });
+                if (String.IsNullOrEmpty(xml.GetElementsByTagName("vNF")[0].InnerXml))
+                {
+                    total += 0;
+                }
+                else
+                {
+                    total += decimal.Parse(xml.GetElementsByTagName("vNF")[0].InnerXml.Replace('.', ','));
+                }
+            }
             return total;
+
         }
 
         public void CarregaXmls(string caminho)
