@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace DesafioN3_1
@@ -26,7 +23,7 @@ namespace DesafioN3_1
         public decimal SomaTotalXml()
         {
             var total = (decimal)0;
-            Parallel.ForEach(Xmls, (x) =>
+            Xmls.ForEach( (x) =>
             {
                 total += decimal.Parse(x.GetElementsByTagName("vNF")[0].InnerXml);
             });

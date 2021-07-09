@@ -8,8 +8,8 @@ namespace DesafioN3_1
         static void Main(string[] args)
         {
             var processador = new ProcessadorDeXml();
-            var TotalvNF = processador.RetornaTotalXmls(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "arquivos"));
-            Console.WriteLine("Valor Total dos xmls: " + TotalvNF);
+            var totalVnf = processador.RetornaTotalXmls(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "arquivos"));
+            Console.WriteLine("Valor Total dos xmls: " + totalVnf);
             Console.ReadKey();
         }
     }
